@@ -39,10 +39,10 @@ def getScreenshot(driver_type, location, content, name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-t", "--type", choices=['edge', 'chrome', 'firefox', 'opera'],help="broswer driver type")
-    parser.add_argument("-l", "--location", help="broswer driver location")
-    parser.add_argument("-f", "--file", help="url file list")
-    parser.add_argument("-p", "--path", help="the location where to store screenshot")
+    parser.add_argument("-t", "--type", choices=['edge', 'chrome', 'firefox', 'opera'],help="broswer driver type", required=True)
+    parser.add_argument("-l", "--location", help="broswer driver location", required=True)
+    parser.add_argument("-f", "--file", help="url file list", required=True)
+    parser.add_argument("-p", "--path", help="the location where to store screenshot", required=True)
     args = parser.parse_args()
 
     driver_type = args.type
